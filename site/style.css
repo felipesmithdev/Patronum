@@ -23,13 +23,14 @@ body {
 button {
     font-weight: 900 !important;
     font-family: 'Montserrat', sans-serif;
-    background-color: #4a18ff;
+    background-color: #24106d;
     color: #fff;
     border-radius: 7px !important;
+    border: solid 1px #210099;
 }
 
 button:hover {
-    background-color: #24106d !important;
+    background-color: #3700ff !important;
     color: #fff !important;
     box-shadow: 2px 2px 0 0 #000 !important;
 }
@@ -46,7 +47,7 @@ body span {
 }
 
 header {
-    z-index: 4;
+    z-index: 9999;
     height: 85px;
     width: 100%;
     background-color: #10141b !important;
@@ -63,6 +64,7 @@ nav {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+    z-index: 2;
 }
 .div-logo {
     height: 100%;
@@ -365,8 +367,8 @@ nav {
     transition: 0.5s;
 }
 .nextPrevArrows button:hover {
-    background-color: #fff;
-    color: #000;
+    background-color: #fff !important;
+    color: #000 !important;
 }
 
 /* animation part */
@@ -588,21 +590,67 @@ nav {
 
 /* sobre nos */
 .div-main-content {
-    height: 300vh;
+    height: 457vh;
     width: 99vw;
     background-image: url('../site/img/png_estrelas.png'), linear-gradient(180deg, #0e0812, #120c19 121.35%);
     margin-top: -3%;
 }
 .container-sobrenos {
     width: 100%;
-    height: 90vh;
-    margin-top: -3%;
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pai-sobrenos {
+    width: 80%;
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.filho-sobrenos {
+    width: 15%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 
+.irmao-sobrenos{
+    height: 85%;
+    margin-left: 2%;
+    width: 90%;
+    display: flex;
+    gap: 150px;
+
+    & img{
+        margin-top: 4%;
+        width: 450px;
+        height: 450px;
+        filter: drop-shadow(5px 5px 5px 1px);
+    }
+}
+
+.irmao-sobrenos span {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    width: 70%;
+    color: #fff;
+}
+
+.filho-sobrenos h2 {
+    font-size: 60px;
+}
+
 /* parte dos livros */
 .container-livros {
-    margin-top: -3%;
+    margin-top: 1%;
     width: 100%;
     height: 100vh;
     position: relative;
@@ -632,7 +680,7 @@ nav {
 .livros-pai .titulo-livro h2 {
     font-family: 'harryFont';
     text-transform: capitalize;
-    font-size: 50px;
+    font-size: 60px;
     color: #ECA114;
 }
 
@@ -664,3 +712,185 @@ nav {
 }
 
 /* fale conosco */
+.container-feedback {
+    width: 100%;
+    height: 91vh;
+    /* border: solid white; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;;
+}
+
+.pai-feedback {
+    width: 80%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+
+    & h2 {
+        font-size: 60px;
+    }
+}
+
+.irmao-feedback {
+    width: 80%;
+    height: 60%;
+    /* border: solid white; */
+    display: flex;
+}
+
+.feedback-mensagem {
+    width: 50%;
+    height: 100%;
+    padding: 15px;
+    color: #fff;
+
+    & span {
+        font-size: 20px;
+    }
+    & textarea {
+        background: transparent;
+        color: #fff;
+        margin-top: 3%;
+        width: 100%;
+        height: 70%;
+        border-radius: 7px;
+        font-size: 30px;
+        padding: 10px;
+    }
+    & .feedback-check {
+        cursor: pointer;
+        color: #fff;
+        width: 50px;
+        height: 20px;
+        margin-left: -1.7%;
+        margin-top: 2%;
+    } 
+    & label {
+        font-size: 20px;
+        color: rgb(218, 215, 215);
+    }
+
+    & .feedback-enviar {
+        height: 10%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 4%;
+
+        & button {
+            height: 100%;
+            width: 50%;
+            font-size: 25px;
+        }
+    }
+}
+.feedback-input{
+    width: 50%;
+    height: 100%;
+    /* border: solid #fff; */
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 15px;
+
+    & span {
+        font-size: 20px;
+        color: #fff;
+    }
+
+    & input {
+        background: transparent;
+        color: #fff;
+        padding: 10px;
+        font-size: 30px;
+        height: 60px;
+        width: 90%;
+        border-radius: 7px;
+    }
+}
+
+.fundo-feedback {
+    width: 100%;
+    height: 20%;
+    background-image: url('../site/img/fundo_trem_feedback.png');
+    background-size: cover;
+}
+
+
+/* quiz container  */
+.quiz-container {
+    width: 100%;
+    height: 70vh;
+    background-image: url('../site/img/png_estrelas.png'), linear-gradient(180deg, #0e0812, #2e1c42 121.35%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-trem {
+    height: 39%;
+    width: 100%;
+    background-image: url('../site/img/fundo_trem.png');
+}
+
+.titulo-quiz {
+    width: 100%;
+    height: 15%;
+    /* margin-top: 1%; */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    & h2 {
+        font-size: 60px;
+    }
+}
+
+.escudos-quiz {
+    width: 30%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+
+    & .escudos {
+        cursor: pointer;
+        width: 100%;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 10px;
+        background-image: url('.//img/chapeu_seletor.png');
+        opacity: 0.4;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 15px;
+        box-shadow: 5px 5px 10px 2px;
+
+        & h2 {
+            font-size: 35px;
+            font-family: "Montserrat", sans-serif !important;
+            text-transform: lowercase;
+        }
+
+        & span{
+            font-size: 20px;
+            color: #fff;
+        }
+    }
+}
+
+.escudos:hover {
+    border: solid #fff;
+    opacity: 1;
+    & h2{
+        color: #ECA114 !important;
+    }
+}
