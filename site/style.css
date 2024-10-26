@@ -140,8 +140,8 @@ nav {
     width: 100%;
     height: auto;
     z-index: -1;
-    object-fit: cover; /* Garante que o vídeo preencha o fundo */
-    opacity: 0.7; /* Ajuste a opacidade do vídeo se desejar */
+    object-fit: cover; /* mesma coisa do background-size, mas como utilizei video usarei essa tag*/
+    opacity: 0.7;
 }
 
 .banner-content {
@@ -244,7 +244,8 @@ nav {
     width: 100%;
     height: 100%;
     position: absolute;
-    inset: 0 0 0 0;
+    inset: 0 0 0 0; 
+    /* essa tag inset está fazendo com que o elemento ocupe apenas o espaço da div pai (no caso no limite da div pai) */
 }
 .slider .list .item img {
     width: 100%;
@@ -264,6 +265,7 @@ nav {
     font-family: "Montserrat", sans-serif;
 }
 
+/* editando sobre cada content (os textos ao lado do slider) */
 .slider .list .item .content {
     position: absolute;
     top: 28%;
@@ -327,7 +329,8 @@ nav {
 .thumbnail .item {
     width: 150px;
     height: 220px;
-    flex-shrink: 0;
+    flex-shrink: 0; 
+    /* esse comando aí evita que o item encolha quando o container pai fica menor que as larguras, nesse caso estou garantindo que os itens tenham width de 150px e height de 220px */
     position: relative;
 }
 
@@ -384,6 +387,7 @@ nav {
     filter: blur(20px);
     opacity: 0;
     animation: showContent 0.5s 1s linear 1 forwards;
+    /* aqui estou definindo que os elementos dentro do .item .content comecem com esses filtros e efeitos para que na showcontent eu defina onde ficarão estaticos */
 }
 
 @keyframes showContent {
@@ -391,6 +395,7 @@ nav {
         transform: translateY(0px);
         filter: blur(00px);
         opacity: 1;
+        /* estou voltando os itens do .content ao tamanho padrão e definindo que ficará assim */
     }
 }
 .slider .list .item:nth-child(1) .content .title{
@@ -414,7 +419,8 @@ nav {
     bottom: 50px;
     left: 50%;
     border-radius: 30px;
-    animation: showImage 0.5s linear 1 forwards;;
+    animation: showImage 0.5s linear 1 forwards;
+    /* aqui estou definindo que as imagens estejam no tamanho menor, como a thumbnail */
 }
 
 @keyframes showImage {
@@ -424,11 +430,13 @@ nav {
         width: 100%;
         height: 100%;
         border-radius: 0;
+        /* expandindo a imagem para o tamanho de exibição ( no caso o fundo inteiro da tela ) */
     }
 }
 .slider.next .thumbnail .item:nth-last-child(1){
     overflow: hidden;
     animation: showThumbnail o.5s linear 1 forwards;
+    /* aqui estou definindo que o ultimo item da thumbnail tenha o overflow ( no caso o seu limite de exposição ) hidden, para que ele não ultrapasse a div pai */
 }
 .slider.prev .list .item img {
     z-index: 100;
@@ -448,6 +456,7 @@ nav {
 @keyframes effectNext {
     from {
         transform: translateX(150px);
+        /* isso aqui ta fazendo meinhas thumbnails se movimentarem de forma limpa */
     }
 }
 
@@ -491,6 +500,7 @@ nav {
         transform: translateY(-150px);
         filter: blur(20px);
         opacity: 0;
+        /* quando o conteudo vai para a thumb e isso faz com que ele não apareça ou ultrapasse a div pai */
     }
 }
 
