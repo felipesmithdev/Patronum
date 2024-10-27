@@ -1,0 +1,128 @@
+body {
+    background: rgb(35,35,35);
+    background: linear-gradient(180deg, rgba(35,35,35,1) 45%, rgba(65,56,56,1) 78%);
+    /* background-image: url('../img/illustrative-bg.png'); */
+    /* position: fixed; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* z-index: -1; */
+}
+button {
+    font-weight: 900 !important;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fff;
+    color: #24106d;
+    border-radius: 7px !important;
+    border: solid 1px #210099;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3700ff !important;
+    color: #fff !important;
+    box-shadow: 2px 2px 0 0 #000 !important;
+}
+
+h2 {
+    text-shadow: 2px 2px 2px #000 !important;
+    color: #fff !important;
+    font-family: "Amatic SC", sans-serif !important;
+}
+
+body span {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300 !important;
+}
+
+
+
+/* rodape*/
+a {
+    text-decoration: none;
+    color: #fff;
+}
+.rodape {
+    width: 100%;
+    height: 25vw;
+    background-color: #10141b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rodape-pai {
+    width: 90%;
+    height: 20vw;
+    border: solid 1px rgb(209, 200, 200);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rodape-filho {
+    height: 75%;
+    width: 80%;
+}
+
+.rodape-neto{
+    height: 100%;
+    width: 80%;
+    display: flex;
+    gap: 10%;
+    font-size: 20px;
+    color: #fff;
+    border-bottom: solid 1px rgba(214, 214, 214, 0.945);
+}
+
+.rodape-coluna {
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    gap: 20%;
+}
+
+.autenticacao-rodape{
+    color: #fff;
+    width: 70%;
+    margin-top: 5px;
+}
+
+.rodape-netao {
+    width: 100%;
+    height: 50%;
+    display: flex;
+}
+
+.netomaior {
+    width: 30%;
+    height: 100%;
+}
+
+.netomaior .rodape-logo {
+    height: 50%;
+    width: 100%;
+}
+.netomaior .rodape-logo h2 {
+    font-family: 'harryFont';
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+    color: #ECA114;
+}
+
+.netomaior .rodape-links {
+    height: 50%;
+    width: 100%;
+}
+.netomaior .rodape-links i {
+    cursor: pointer;
+}
+.netomaior .rodape-links {
+    font-size: 40px;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+}

@@ -6,24 +6,22 @@
     <title>Patronum</title>
     <link rel="icon" href="../site/img/favicon.png" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="rodape.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Germania+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <script
-      src="https://kit.fontawesome.com/d5ea0dfb99.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/d5ea0dfb99.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Germania+One&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Germania+One&display=swap" rel="stylesheet"/>
   </head>
   <body>
     <header>
       <nav>
-        <div class="div-logo"><h2 class="logo-h2">PATRONUM</h2></div>
+        <div class="div-logo"><a href="index.html">
+          <h2 class="logo-h2">PATRONUM</h2></a>
+        </div>
         <div class="nav-content">
           <ul class="list-nav">
             <li><a href="#">Home</a></li>
@@ -32,11 +30,11 @@
             <li><a href="#">Contato</a></li>
             <li><a href="#">Livros</a></li>
           </ul>
-          <div class="nav-login"><button onclick="">Entrar</button></div>
+          <div class="nav-login"><a href="./login/login.html"><button onclick="">Entrar</button></a></div>
         </div>
       </nav>
     </header>
-    <section class="banner-content">
+    <section id="_banner-content" class="banner-content">
         <div class="video-background">
           <video autoplay muted loop id="bg-video">
             <source src="../site/img/hogwartsmp4.mp4" type="video/mp4" />
@@ -53,7 +51,7 @@
         </div>
     </section>
     <div class="div-main-content">
-      <section class="container-sobrenos">
+      <section id="_sobre-nos" class="container-sobrenos">
         <div class="pai-sobrenos">
           <div class="filho-sobrenos">
             <h2>Sobre Nós</h2>
@@ -71,7 +69,7 @@
         </div>
       </section>
 
-      <section class="container-livros">
+      <section id="_livros" class="container-livros">
         <div class="body-tamanho">
           <div class="livros-pai">
             <div class="titulo-livro"><h2>Livros mais procurados</h2></div>
@@ -113,7 +111,7 @@
         </div>
       </section>
 
-      <section class="slider-section">
+      <section id="_slider" class="slider-section">
         <div class="slider">
           <div class="list">
             <div class="item">
@@ -324,7 +322,7 @@
         </div>
       </div>
       </section>
-      <section class="container-feedback">
+      <section id="_feedback" class="container-feedback">
       <div class="pai-feedback">
         <h2>Fale Conosco</h2>
       </div>        
@@ -347,13 +345,15 @@
       <div class="fundo-feedback"></div>
       </section>
 
-      <section class="quiz-container">
+      <section id="_quizzes" class="quiz-container">
         <div class="titulo-quiz"> <h2>QUIZZES</h2></div>
         <div class="escudos-quiz">
-          <div class="escudos">
-            <h2>Quiz do chapéu seletor</h2>
-            <span>não perca tempo, responda o quiz</span>
-          </div>
+          <a href="quiz/quiz_chapeu.html">
+            <div class="escudos">
+              <h2>Quiz do chapéu seletor</h2>
+              <span>não perca tempo, responda o quiz</span>
+            </div>
+          </a>
         </div>
         <div class="background-trem">
         </div>
@@ -365,16 +365,16 @@
           <div class="rodape-netao">
             <div class="rodape-neto">
               <div class="rodape-coluna">
-                <span>Mensagem</span>
-                <span>Mensagem</span>
+                <span><a href="#_banner-content">home</a></span>
+                <span><a href="#_sobre-nos">Quem somos</a></span>
               </div>
               <div class="rodape-coluna">
-                <span>Mensagem</span>
-                <span>Mensagem</span>
+                <span><a href="#_slider">Filmes</a></span>
+                <span><a href="#_livros">Livros</a></span>
               </div>
               <div class="rodape-coluna">
-                <span>Mensagem</span>
-                <span>Mensagem</span>
+                <span><a href="#_feedback">Fale conosco</a></span>
+                <span><a href="#_quizzes">Quizzes</a></span>
               </div>
             </div>
             <div class="netomaior">

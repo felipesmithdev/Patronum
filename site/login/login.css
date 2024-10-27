@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Germania+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Germania+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+button {
+    font-weight: 900 !important;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fff;
+    color: #24106d;
+    border-radius: 7px !important;
+    border: solid 1px #210099;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3700ff !important;
+    color: #fff !important;
+    box-shadow: 2px 2px 0 0 #000 !important;
+}
+
+h2 {
+    text-shadow: 2px 2px 2px #000 !important;
+    color: #fff !important;
+    font-family: "Amatic SC", sans-serif !important;
+}
+
+body span {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300 !important;
+    color: #fff;
+}
+
+body {
+    background-image: url('../img/banner_mais_claro.jpg');
+}
+
+p {
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+.login-fundo {
+    width: 100vw;
+    height: 100vh;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-card {
+    margin-top: -3%;
+    width: 30%;
+    height: 80%;
+    /* background-color: #fff; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-nome {
+    height: 8%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & h2 {
+        font-size: 80px;
+    }
+}
+
+.login-campos {
+    margin-top: 5%;
+    height: 50%;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    & span {
+        font-size: 20px;
+    }
+
+    & input {
+        height: 60px;
+        font-size: 20px;
+        padding: 10px;
+        background: transparent;
+        border: solid white 1px;
+        color: #fff;
+    }
+
+}
+
+.login-botao {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & button {
+        width: 95%;
+        height: 70%;
+        font-size: 40px;
+    }
+}
