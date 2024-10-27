@@ -554,8 +554,8 @@ body span {
     flex-wrap: wrap;
 }
 
-.livros-pai .livros-filho  img {
-    box-shadow: 10px 8px 5px 2px;
+.livros-pai .livros-filho a img {
+    box-shadow: 10px 8px 5px 2px #000;
 }
 
 .livros-filho-estrela {
