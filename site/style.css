@@ -235,7 +235,14 @@ body span {
     cursor: pointer;
     transition: 0.4s;
     border-radius: 7px;
+    
+    & a {
+    color: #24106d;
+    }
+}
 
+.slider .list .item .content .button button a:hover {
+    color: #fff;
 }
 
 .slider .list .item .content .button button:hover{
