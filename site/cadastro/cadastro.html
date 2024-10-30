@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cadastro</title>
+    <link rel="stylesheet" href="cadastro.css">
+    <link rel="icon" href="../img/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Germania+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <section class="cadastro-fundo"> 
+        <div class="cadastro-card">
+            <div class="cadastro-nome"><a href="../index.html"><h2>Cadastro</h2></a>
+        </div>
+            <div class="cadastro-campos">
+                <div class="primeiro-grupo">
+                    <div class="groups-form nome">
+                        <label for="nome">Nome Completo</label>
+                        <input id="input_nome" type="text">
+                    </div>
+                    <div class="groups-form dtnasc">
+                        <label for="data de nascimento">Data de Nascimento</label>
+                        <input id="input_data" type="date">
+                    </div>
+                </div>
+                <div class="segundo-grupo">
+                    <div class="groups-form email">
+                        <label for="email">Email</label>
+                        <input id="input_email" type="text">
+                    </div>
+                    <div class="groups-form confirmeemail">
+                        <label for="confirme o email">Confirme o email</label>
+                        <input id="input_conf_email" type="text">
+                    </div>
+                </div>
+                <div class="final-grupo">
+                    <div class="groups-form senha">
+                        <label>Senha</label>
+                        <input id="input_senha" type="password">
+                    </div>
+                    <div class="groups-form confirmesenha">
+                        <label>Confirme a senha</label>
+                        <input id="input_conf_senha" type="password">
+                    </div>
+                </div>
+            </div>
+            <div class="cadastro-botao"><button onclick="cadastrar()">Cadastrar</button></div>
+        </div>
+    </section>
+    <script src="cadastro.html"></script>
+</body>
+</html>
