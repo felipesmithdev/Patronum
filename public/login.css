@@ -36,7 +36,7 @@ body span {
 }
 
 body {
-    background-image: url('../img/banner_mais_claro.jpg');
+    background-image: url('./img/banner_mais_claro.jpg');
 }
 
 p {
@@ -78,6 +78,7 @@ a {
 }
 
 .login-campos {
+    border-top: solid 2px #fff;
     margin-top: 5%;
     height: 50%;
     width: 100%;

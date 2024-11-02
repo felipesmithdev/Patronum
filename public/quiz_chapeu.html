@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Selector</title>
-    <link rel="icon" href="../img/favicon.png" />
-    <link rel="stylesheet" href="../nav.css" />
-    <link rel="stylesheet" href="../rodape.css">
+    <link rel="icon" href="./img/favicon.png" />
+    <link rel="stylesheet" href="./nav.css" />
+    <link rel="stylesheet" href="./rodape.css">
     <link rel="stylesheet" href="quizz.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,18 +19,18 @@
 <body>
     <header>
         <nav>
-          <div class="div-logo"><a href="../index.html">
+          <div class="div-logo"><a href="./index.html">
             <h2 class="logo-h2">PATRONUM</h2>
           </a></div>
           <div class="nav-content">
             <ul class="list-nav">
-              <li><a href="../index.html#_banner">Home</a></li>
-              <li><a href="../index.html#_sobre-nos">Sobre</a></li>
-              <li><a href="../index.html#_slider">Filmes</a></li>
-              <li><a href="../index.html#_feedback">Contato</a></li>
-              <li><a href="../index.html#_livros">Livros</a></li>
+              <li><a href="./index.html#_banner">Home</a></li>
+              <li><a href="./index.html#_sobre-nos">Sobre</a></li>
+              <li><a href="./index.html#_slider">Filmes</a></li>
+              <li><a href="./index.html#_feedback">Contato</a></li>
+              <li><a href="./index.html#_livros">Livros</a></li>
             </ul>
-            <div class="nav-login"><a href="../login/login.html"><button onclick="">Entrar</button></a></div>
+            <div class="nav-login"><a href="./login.html"><button onclick="">Entrar</button></a></div>
           </div>
         </nav>
     </header>
@@ -56,20 +56,20 @@
             <div class="rodape-netao">
               <div class="rodape-neto">
                 <div class="rodape-coluna">
-                  <span><a href="../index.html#_banner-content">home</a></span>
-                  <span><a href="../index.html#_sobre-nos">Quem somos</a></span>
+                  <span><a href="../public/index.html#_banner-content">home</a></span>
+                  <span><a href="../public/index.html#_sobre-nos">Quem somos</a></span>
                 </div>
                 <div class="rodape-coluna">
-                  <span><a href="../index.html#_slider">Filmes</a></span>
-                  <span><a href="../index.html#_livros">Livros</a></span>
+                  <span><a href="../public/index.html#_slider">Filmes</a></span>
+                  <span><a href="../public/index.html#_livros">Livros</a></span>
                 </div>
                 <div class="rodape-coluna">
-                  <span><a href="../index.html#_feedback">Fale conosco</a></span>
-                  <span><a href="../index.html#_quizzes">Quizzes</a></span>
+                  <span><a href="../public/index.html#_feedback">Fale conosco</a></span>
+                  <span><a href="../public/index.html#_quizzes">Quizzes</a></span>
                 </div>
               </div>
               <div class="netomaior">
-                <div class="rodape-logo"><a href="../index.html">
+                <div class="rodape-logo"><a href="../public/index.html">
                   <h2>PATRONUM</h2>
                 </a></div>
                 <div class="rodape-links">
@@ -97,3 +97,11 @@
     </footer>
 </body>
 </html>
+<script>
+
+
+
+if (sessionStorage.NOME_USUARIO != undefined){
+    document.querySelector(".nav-login").innerHTML = `<p style="color:#fff; font-size:20px; font-family: 'Montserrat';">Olá ! <br> ${sessionStorage.NOME_USUARIO} </p>`
+  }
+</script>

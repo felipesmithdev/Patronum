@@ -6,7 +6,7 @@
 
 
 body {
-    background-image: url('../img/banner_login.jpg');
+    background-image: url('./img/banner_login.jpg');
     background-image: cover;
     background-repeat: no-repeat;
     width: 100%;

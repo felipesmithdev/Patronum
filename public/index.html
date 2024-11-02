@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Patronum</title>
-    <link rel="icon" href="../site/img/favicon.png" />
+    <link rel="icon" href="./img/favicon.png" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="nav.css">
     <link rel="stylesheet" href="rodape.css">
@@ -30,14 +30,14 @@
             <li><a href="#_feedback">Contato</a></li>
             <li><a href="#_livros">Livros</a></li>
           </ul>
-          <div class="nav-login"><a href="./login/login.html"><button onclick="">Entrar</button></a></div>
+          <div class="nav-login"><a href="./login.html"><button onclick="">Entrar</button></a></div>
         </div>
       </nav>
     </header>
     <section id="_banner-content" class="banner-content">
         <div class="video-background">
           <video autoplay muted loop id="bg-video">
-            <source src="../site/img/hogwartsmp4.mp4" type="video/mp4" />
+            <source src="./img/hogwartsmp4.mp4" type="video/mp4" />
           </video>
         </div>
         <div class="banner-pai">
@@ -75,36 +75,36 @@
             <div class="titulo-livro"><h2>Livros mais procurados</h2></div>
             <div class="livros-filho">
               <div class="livros-filho-estrela">
-                <a href="https://www.harrypotter.com/discover/books/harry-potter-and-the-philosophers-stone"><img src="../site/img/livros/Rectangle 13.png" alt="" /></a>
-                <i class="fa-regular fa-star"></i>
+                <a href="https://www.harrypotter.com/discover/books/harry-potter-and-the-philosophers-stone"><img src="./img/livros/Rectangle 13.png" alt="" /></a>
+                <i id="livro1" onclick="favoritar1()" class="fa-regular fa-star"></i>
               </div>
               <div class="livros-filho-estrela">
-                <a href="https://www.harrypotter.com/discover/books/harry-potter-and-the-chamber-of-secrets"><img src="../site/img/livros/Rectangle 14.png" alt="" /></a>
-                <i class="fa-regular fa-star"></i>
+                <a href="https://www.harrypotter.com/discover/books/harry-potter-and-the-chamber-of-secrets"><img src="./img/livros/Rectangle 14.png" alt="" /></a>
+                <i id="livro2" onclick="favoritar2()" class="fa-regular fa-star"></i>
               </div>
               <div class="livros-filho-estrela">
-                <a href="https://www.harrypotter.com/discover/books/harry-potter-and-the-prisoner-of-azkaban"><img src="../site/img/livros/Rectangle 15.png" alt="" /></a>
-                <i class="fa-regular fa-star"></i>
+                <a href="https://www.harrypotter.com/discover/books/harry-potter-and-the-prisoner-of-azkaban"><img src="./img/livros/Rectangle 15.png" alt="" /></a>
+                <i id="livro3" onclick="favoritar3()" class="fa-regular fa-star"></i>
               </div>
               <div class="livros-filho-estrela">
-                <a href="https://www.harrypotter.com/discover/books/harry-potter-and-the-goblet-of-fire"><img src="../site/img/livros/Rectangle 20.png" alt="" /></a>
-                <i class="fa-regular fa-star"></i>
+                <a href="https://www.harrypotter.com/discover/books/harry-potter-and-the-goblet-of-fire"><img src="./img/livros/Rectangle 20.png" alt="" /></a>
+                <i id="livro4" onclick="favoritar4()" class="fa-regular fa-star"></i>
               </div>
               <div class="livros-filho-estrela">
-                <a href="https://www.harrypotter.com/discover/books/harry-potter-and-the-order-of-the-phoenix"><img src="../site/img/livros/Rectangle 16.png" alt="" /></a>
-                <i class="fa-regular fa-star"></i>
+                <a href="https://www.harrypotter.com/discover/books/harry-potter-and-the-order-of-the-phoenix"><img src="./img/livros/Rectangle 16.png" alt="" /></a>
+                <i id="livro5" onclick="favoritar5()" class="fa-regular fa-star"></i>
               </div>
               <div class="livros-filho-estrela">
-                <a href="https://www.harrypotter.com/discover/books/harry-potter-and-the-half-blood-prince"><img src="../site/img/livros/Rectangle 17.png" alt="" /></a>
-                <i class="fa-regular fa-star"></i>
+                <a href="https://www.harrypotter.com/discover/books/harry-potter-and-the-half-blood-prince"><img src="./img/livros/Rectangle 17.png" alt="" /></a>
+                <i id="livro6" onclick="favoritar6()" class="fa-regular fa-star"></i>
               </div>
               <div class="livros-filho-estrela">
-                <a href="https://www.harrypotter.com/discover/books/harry-potter-and-the-deathly-hallows"><img src="../site/img/livros/Rectangle 19.png" alt="" /></a>
-                <i class="fa-regular fa-star"></i>
+                <a href="https://www.harrypotter.com/discover/books/harry-potter-and-the-deathly-hallows"><img src="./img/livros/Rectangle 19.png" alt="" /></a>
+                <i id="livro7" onclick="favoritar7()" class="fa-regular fa-star"></i>
               </div>
               <div class="livros-filho-estrela">
-                <a href="https://www.harrypotter.com/discover/books/harry-potter-and-the-cursed-child-parts-one-and-two-screenplay"><img src="../site/img/livros/Rectangle 18.png" alt="" /></a>
-                <i class="fa-regular fa-star"></i>
+                <a href="https://www.harrypotter.com/discover/books/harry-potter-and-the-cursed-child-parts-one-and-two-screenplay"><img src="./img/livros/Rectangle 18.png" alt="" /></a>
+                <i id="livro8" onclick="favoritar8()" class="fa-regular fa-star"></i>
               </div>
             </div>
           </div>
@@ -115,7 +115,7 @@
         <div class="slider">
           <div class="list">
             <div class="item">
-              <img src="../site/img/slider/pedrafilosofal.jpeg" alt="" />
+              <img src="./img/slider/pedrafilosofal.jpeg" alt="" />
               <div class="content">
                 <div class="title">Harry Potter</div>
                 <div class="type">E A Pedra Filosofal</div>
@@ -130,7 +130,7 @@
               </div>
             </div>
             <div class="item">
-              <img src="../site/img/slider/camarasecreta.jpg" alt="" />
+              <img src="./img/slider/camarasecreta.jpg" alt="" />
               <div class="content">
                 <div class="title">Harry Potter</div>
                 <div class="type">E A Câmara Secreta</div>
@@ -145,7 +145,7 @@
               </div>
             </div>
             <div class="item">
-              <img src="../site/img/slider/prisioneiro.png"/>
+              <img src="./img/slider/prisioneiro.png"/>
               <div class="content">
                 <div class="title">Harry Potter</div>
                 <div class="type">E O Prisioneiro De Azkaban</div>
@@ -161,7 +161,7 @@
               </div>
             </div>
             <div class="item">
-              <img src="../site/img/slider/calicedefogo.jpg" alt="" />
+              <img src="./img/slider/calicedefogo.jpg" alt="" />
               <div class="content">
                 <div class="title">Harry Potter</div>
               <div class="type">E O Cálice De Fogo</div>
@@ -176,7 +176,7 @@
             </div>
           </div>
           <div class="item">
-            <img src="../site/img/slider/ordemdafenix.jpg" alt="" />
+            <img src="./img/slider/ordemdafenix.jpg" alt="" />
             <div class="content">
               <div class="title">Harry Potter</div>
               <div class="type">E A Ordem Da Fenix</div>
@@ -191,7 +191,7 @@
             </div>
           </div>
           <div class="item">
-            <img src="../site/img/slider/enigmadoprincipe1.jpg" alt="" />
+            <img src="./img/slider/enigmadoprincipe1.jpg" alt="" />
             <div class="content">
               <div class="title">Harry Potter</div>
               <div class="type">E O Enigma Do Príncipe</div>
@@ -206,7 +206,7 @@
             </div>
           </div>
           <div class="item">
-            <img src="../site/img/slider/reliquias.jpg" alt="" />
+            <img src="./img/slider/reliquias.jpg" alt="" />
             <div class="content">
               <div class="title">Harry Potter</div>
               <div class="type">E As Reliquias Da Morte Parte 1</div>
@@ -221,7 +221,7 @@
             </div>
           </div>
           <div class="item">
-            <img src="../site/img/slider/reliquias2.jpg" alt="" />
+            <img src="./img/slider/reliquias2.jpg" alt="" />
             <div class="content">
               <div class="title">Harry Potter</div>
               <div class="type">E As Reliquias Da Morte Parte 2</div>
@@ -236,7 +236,7 @@
             </div>
           </div>
           <div class="item">
-            <img src="../site/img/slider/animaisfantasticos.jpg" alt="" />
+            <img src="./img/slider/animaisfantasticos.jpg" alt="" />
             <div class="content">
               <div class="title">Animais Fantásticos</div>
               <div class="type">E Onde Habitam</div>
@@ -251,7 +251,7 @@
             </div>
           </div>
           <div class="item">
-            <img src="../site/img/slider/animaisfantasticos2.jpg" alt="" />
+            <img src="./img/slider/animaisfantasticos2.jpg" alt="" />
             <div class="content">
               <div class="title">Animais Fantásticos 2</div>
               <div class="type">Os Crimes De Grindelwald</div>
@@ -266,7 +266,7 @@
             </div>
           </div>
           <div class="item">
-            <img src="../site/img/slider/animaisfantasticos3.jpg" alt="" />
+            <img src="./img/slider/animaisfantasticos3.jpg" alt="" />
             <div class="content">
               <div class="title">Animais Fantásticos 3</div>
               <div class="type">Os Segredos De Dumbledore</div>
@@ -283,37 +283,37 @@
         </div>
         <div class="thumbnail">
           <div class="item">
-            <img src="../site/img/slider/pedrafilosofal_capa.jpeg" alt="" />
+            <img src="./img/slider/pedrafilosofal_capa.jpeg" alt="" />
           </div>
           <div class="item">
-            <img src="../site/img/slider/camarasecreta_capa.webp" alt="" />
+            <img src="./img/slider/camarasecreta_capa.webp" alt="" />
           </div>
           <div class="item">
-            <img src="../site/img/slider/prisioneiro_capa.jpg" alt="" />
+            <img src="./img/slider/prisioneiro_capa.jpg" alt="" />
           </div>
           <div class="item">
-            <img src="../site/img/slider/calicedefogo_capa.jpeg" alt="" />
+            <img src="./img/slider/calicedefogo_capa.jpeg" alt="" />
           </div>
           <div class="item">
-            <img src="../site/img/slider/ordemdafenix_capa.jpg" alt="" />
+            <img src="./img/slider/ordemdafenix_capa.jpg" alt="" />
           </div>
           <div class="item">
-            <img src="../site/img/slider/enigmadoprincipe1_capa.jpg" alt="" />
+            <img src="./img/slider/enigmadoprincipe1_capa.jpg" alt="" />
           </div>
           <div class="item">
-            <img src="../site/img/slider/reliquias_capa.jpg" alt="" />
+            <img src="./img/slider/reliquias_capa.jpg" alt="" />
           </div>
           <div class="item">
-            <img src="../site/img/slider/reliquias2_capa.jpeg" alt="" />
+            <img src="./img/slider/reliquias2_capa.jpeg" alt="" />
           </div>
           <div class="item">
-            <img src="../site/img/slider/animaisfantasticos_capa.jpg" alt="" />
+            <img src="./img/slider/animaisfantasticos_capa.jpg" alt="" />
           </div>
           <div class="item">
-            <img src="../site/img/slider/animaisfantasticos2_capa.webp" alt="" />
+            <img src="./img/slider/animaisfantasticos2_capa.webp" alt="" />
           </div>
           <div class="item">
-            <img src="../site/img/slider/animaisfantasticos3_capa.jpeg" alt="" />
+            <img src="./img/slider/animaisfantasticos3_capa.jpeg" alt="" />
           </div>
         </div>
         <div class="nextPrevArrows">
@@ -348,7 +348,7 @@
       <section id="_quizzes" class="quiz-container">
         <div class="titulo-quiz"> <h2>QUIZZES</h2></div>
         <div class="escudos-quiz">
-          <a href="quiz/quiz_chapeu.html">
+          <a href="./quiz_chapeu.html">
             <div class="escudos">
               <h2>Quiz do chapéu seletor</h2>
               <span>não perca tempo, responda o quiz</span>
@@ -408,8 +408,78 @@
 </html>
 <script>
 
+if (sessionStorage.NOME_USUARIO != undefined){
+    document.querySelector(".nav-login").innerHTML = `<p style="color:#fff; font-size:20px; font-family: 'Montserrat';">Olá ! <br> ${sessionStorage.NOME_USUARIO} </p>`
+  }
+  
   function ir_para_cadastro(){
-    window.location.href="./cadastro/cadastro.html"
+    window.location.href="./cadastro.html"
+  }
+
+  function favoritar1(){
+    if (sessionStorage.NOME_USUARIO != undefined){
+      var mudar = document.getElementById("livro1");
+      mudar.className = "fa-solid fa-star";
+    } else {
+       window.location = "./login.html";
+    }
+  }
+  function favoritar2(){
+    if (sessionStorage.NOME_USUARIO != undefined){
+      var mudar = document.getElementById("livro2");
+      mudar.className = "fa-solid fa-star";
+    } else {
+       window.location = "./login.html";
+    }
+  }
+  function favoritar3(){
+    if (sessionStorage.NOME_USUARIO != undefined){
+      var mudar = document.getElementById("livro3");
+      mudar.className = "fa-solid fa-star";
+    } else {
+       window.location = "./login.html";
+    }
+  }
+  function favoritar4(){
+    if (sessionStorage.NOME_USUARIO != undefined){
+      var mudar = document.getElementById("livro4");
+      mudar.className = "fa-solid fa-star";
+    } else {
+       window.location = "./login.html";
+    }
+  }
+  function favoritar5(){
+    if (sessionStorage.NOME_USUARIO != undefined){
+      var mudar = document.getElementById("livro5");
+      mudar.className = "fa-solid fa-star";
+    } else {
+       window.location = "./login.html";
+    }
+  }
+  function favoritar6(){
+    if (sessionStorage.NOME_USUARIO != undefined){
+      var mudar = document.getElementById("livro6");
+      mudar.className = "fa-solid fa-star";
+    } else {
+       window.location = "./login.html";
+    }
+  }
+  function favoritar7(){
+    if (sessionStorage.NOME_USUARIO != undefined){
+      var mudar = document.getElementById("livro7");
+      mudar.className = "fa-solid fa-star";
+    } else {
+       window.location = "./login.html";
+    }
+  }
+  
+  function favoritar8(){
+    if (sessionStorage.NOME_USUARIO != undefined){
+      var mudar = document.getElementById("livro8");
+      mudar.className = "fa-solid fa-star";
+    } else {
+       window.location = "./login.html";
+    }
   }
 
 
