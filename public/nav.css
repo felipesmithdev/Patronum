@@ -20,8 +20,8 @@ button {
 }
 
 button:hover {
-    background-color: #3700ff !important;
-    color: #fff !important;
+    background-color: #fff !important;
+    color: #10141b !important;
     box-shadow: 2px 2px 0 0 #000 !important;
 }
 
@@ -97,6 +97,12 @@ nav {
     color: #fff !important;
     background: transparent;
     border: solid white 1px;
+}
+
+.nav-login button:hover {
+    background-color: #fff !important;
+    color: #10141b !important;
+    box-shadow: 2px 2px 0 0 #000 !important;
 }
 
 .nav-content {

@@ -7,7 +7,7 @@
 
 body {
     background-image: url('./img/banner_login.jpg');
-    background-image: cover;
+    background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
 }
@@ -50,7 +50,7 @@ body {
     width: 50%;
     height: 100%;
     border: 1px solid white;
-    border-top: none;
+    /* border-top: none; */
     border-right: none;
     display: flex;
     justify-content: space-around;
@@ -84,6 +84,8 @@ body {
     align-items: center;
     border-top: 1px solid white;
     border-right: 1px solid white;
+    border-bottom: 1px solid white;
+    /* border: solid 1px white; */
     gap: 15px;
 }
 
@@ -100,6 +102,8 @@ body {
     cursor: pointer;
     border-radius: 2px;
 }
+
+
 
 .alternativas-background:hover {
     background-color: #d4d4d4;

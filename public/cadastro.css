@@ -11,15 +11,16 @@ button {
     font-weight: 900 !important;
     font-family: 'Montserrat', sans-serif;
     background-color: #fff;
-    color: #24106d;
-    border-radius: 7px !important;
+    color: #362e41;
+    border-radius: 10px !important;
     border: solid 1px #210099;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #3700ff !important;
+    background-color: #362e41 !important;
     color: #fff !important;
+    border: none;
     box-shadow: 2px 2px 0 0 #000 !important;
 }
 
@@ -36,7 +37,7 @@ body span {
 }
 
 body {
-    background-image: url('./img/banner_mais_claro.jpg');
+    background-image: url('./img/teste_fundo_cadastro.jpg');
 }
 
 p {
@@ -80,10 +81,13 @@ a {
 
 .cadastro-campos {
     margin-top: 5%;
-    border-top: solid white;
+    border-top: solid 2px #c8c8c8;
+    border-left: solid 2px #c8c8c8;
+    border-right: solid 2px #c8c8c8;
+    border-radius: 10px;
     height: 60%;
     width: 100%;
-    padding: 20px;
+    padding: 25px;
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -99,6 +103,7 @@ a {
         background: transparent;
         border: solid white 1px;
         color: #fff;
+        border-radius: 8px;
     }
 
 }
@@ -147,15 +152,19 @@ a {
 }
 
 .cadastro-botao {
-    width: 97%;
-    height: 10%;
+    border-left: solid 1px #c8c8c8;
+    border-right: solid 1px #c8c8c8;
+    border-bottom: solid 1px #c8c8c8;
+    border-radius: 10px;
+    width: 100%;
+    height: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
 
     & button {
         width: 50%;
-        height: 70%;
+        height: 50%;
         font-size: 40px;
     }
 }

@@ -1,23 +1,13 @@
 var database = require("../database/config");
 
-function buscar_casa(casa) {
+function atualizar_casa(id_usuario, fk_casa) {
+  var instrucaoSql = `UPDATE pessoa SET fk_casa = ${fk_casa} WHERE id_pessoa = ${id_usuario}`;
 
-  var instrucaoSql = `SELECT * FROM casa WHERE id_casa = ${casa}`;
-
-  console.log("Executando a instrução SQL: \n" + instrucaoSql);
-  return database.executar(instrucaoSql);
-}
-
-function cadastrar(casa, nome) {
-  
-  var instrucaoSql = `INSERT INTO (nome, fk_pessoa) interacoes VALUES (${nome}, ${casa})`;
-
-  console.log("Executando a instrução SQL: \n" + instrucaoSql);
+  console.log("executando o update sql: \n" + instrucaoSql);
   return database.executar(instrucaoSql);
 }
 
 
 module.exports = {
-  buscar_casa,
-  cadastrar
+  atualizar_casa
 }

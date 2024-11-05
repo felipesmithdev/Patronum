@@ -21,21 +21,6 @@ function autenticar(req, res) {
                         console.log(resultadoAutenticar);
                         res.status(200).json(resultadoAutenticar);
 
-                        // casaModel.buscar_casa(resultadoAutenticar[0].id_casa)
-                        //     .then((resultado_casa) => {
-                        //         if (resultado_casa.length > 0) {
-                        //             res.json({
-                        //                 id: resultadoAutenticar[0].id,
-                        //                 email: resultadoAutenticar[0].email,
-                        //                 nome: resultadoAutenticar[0].nome,
-                        //                 data: resultadoAutenticar[0].data,
-                        //                 senha: resultadoAutenticar[0].senha,
-                        //                 casa: resultado_casa
-                        //             });
-                        //         } else {
-                        //             res.status(204).json({ casa: [] });
-                        //         }
-                        //     })
                     } else if (resultadoAutenticar.length == 0) {
                         res.status(403).send("Email e/ou senha inválido(s)");
                     } else {
@@ -44,8 +29,6 @@ function autenticar(req, res) {
                 }
             ).catch(
                 function (erro) {
-                    // console.log(erro);
-                    // console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
                     res.status(500).json(erro.sqlMessage);
                 }
             );

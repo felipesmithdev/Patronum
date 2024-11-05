@@ -38,14 +38,14 @@
       <div class="titulo-quizz"><h2>Chapéu Seletor</h2></div>
       <div class="quizz-card">
         <div class="quizz-pergunta">
-          <span>1° Pergunta</span>
-          <div class="tamanho-pergunta"><span>Como você reage a uma situação em que precisa enfrentar algo assustador ou perigoso?</span></div>
+          <span id="finalizei"><span id="pergunta_atual">1</span>° Pergunta</span>
+          <div class="tamanho-pergunta"><span class="question">Como você reage a uma situação em que precisa enfrentar algo assustador ou perigoso?</span></div>
         </div>
         <div class="quizz-alternativas">
-          <div class="alternativas-background"><span>Enfrenta com coragem, mesmo com medo</span></div>
-          <div class="alternativas-background"><span>Prefere uma abordagem cuidadosa e estratégica</span></div>
-          <div class="alternativas-background"><span>Tenta avaliar se realmente é necessário enfrentar essa situação</span></div>
-          <div class="alternativas-background"><span>Evita o perigo se puder, mas ajuda quem precisar</span></div>
+          <div id="alternativaA" class="alternativas-background"><span>Enfrenta com coragem, mesmo com medo</span></div>
+          <div id="alternativaB" class="alternativas-background"><span>Prefere uma abordagem cuidadosa e estratégica</span></div>
+          <div id="alternativaC" class="alternativas-background"><span>Tenta avaliar se realmente é necessário enfrentar essa situação</span></div>
+          <div id="alternativaD" class="alternativas-background"><span>Evita o perigo se puder, mas ajuda quem precisar</span></div>
         </div>
       </div>
     </section>
@@ -98,10 +98,268 @@
 </body>
 </html>
 <script>
-
-
-
-if (sessionStorage.NOME_USUARIO != undefined){
-    document.querySelector(".nav-login").innerHTML = `<p style="color:#fff; font-size:20px; font-family: 'Montserrat';">Olá ! <br> ${sessionStorage.NOME_USUARIO} </p>`
+  if (sessionStorage.NOME_USUARIO != undefined){
+      document.querySelector(".nav-login").innerHTML = `<p style="color:#fff; font-size:20px; font-family: 'Montserrat';">Olá ! <br> ${sessionStorage.NOME_USUARIO} </p>`
+      // proxima_pergunta();
+    } else {
+      // window.location = "./login.html";
+    }
+  
+  
+    const listaDeQuestoes = [
+  
+  {
+      pergunta: "Como você reage a uma situação em que precisa enfrentar algo assustador ou perigoso?",
+      resposta: [
+        { alternativa: "Enfrenta com coragem, mesmo com medo", correct: true, casa:'grif' }, 
+        // grifinoria
+        { alternativa: "Prefere uma abordagem cuidadosa e estratégica", correct: true, casa: 'son'},
+        // sonserina
+        { alternativa: "Tenta avaliar se realmente é necessário enfrentar essa situação", correct: true, casa: 'corv'},
+        // corvinal
+        { alternativa: "Evita o perigo se puder, mas ajuda quem precisar", correct: true, casa: 'lufa'}
+        // lufalufa
+      ]
+  },
+  
+  
+  {
+      pergunta: "Como você age em uma competição com amigos?",
+      resposta: [
+        {alternativa: "Joga para ganhar, com foco e determinação", correct: true, casa:'grif'},
+        // grifinoria     
+        {alternativa: "Valoriza mais a diversão e o tempo com os amigos", correct: true, casa:'lufa'},
+        // lufalufa
+        {alternativa: "Tenta ganhar, mas sem comprometer os valores", correct: true, casa:'son'},
+        // corvinal
+        {alternativa: "Foca em estratégias para vencer, mas com respeito", correct: true, casa:'corv'}
+      ] 
+      // sonserina
+  },
+  
+  {
+      pergunta: "Qual dessas qualidades você considera mais importante?",
+      resposta: [
+        {alternativa: "Coragem", correct: true, casa:'grif'}, 
+        // grifinoria
+        {alternativa: "Lealdade", correct: true, casa:'lufa' },
+        // lufalufa,
+        {alternativa: "Inteligência", correct: true, casa:'corv' },
+        // corvinal,
+        {alternativa: "Ambição", correct: true, casa:'son' }
+        // sonserina
+      ] 
+  },
+  {
+      pergunta: "Como você lida com uma situação onde não entende algo novo?",
+      resposta: [
+        {alternativa: "Pede ajuda e tenta aprender com outras pessoas", correct: true, casa:'lufa' },
+        // lufalufa,
+        {alternativa: "Tenta sozinho até conseguir entender", correct: true, casa:'grif' }, 
+        // grifinoria
+        {alternativa: "Faz uma pesquisa profunda até entender tudo", correct: true, casa:'corv' },
+        // corvinal,
+        {alternativa: "Encontra uma maneira prática de aprender, mesmo que rápida", correct: true, casa:'son' }
+        // sonserina
+      ]  
+  },{
+      pergunta: "Quando alguém te machuca emocionalmente, como você reage?",
+      resposta:[
+        {alternativa: "Confronta a pessoa e busca resolver a situação diretamente", correct: true, casa:'grif' }, 
+        // grifinoria
+        {alternativa: "Perdoa, mas mantém certa cautela", correct: true, casa:'son' },
+        // sonserina
+        {alternativa: "Prefere entender o motivo antes de agir", correct: true, casa:'corv' },
+        // corvinal,
+        {alternativa: "Guarda para si, mas usa a situação para ser mais forte", correct: true, casa:'lufa' }
+        // lufalufa
+      ]
+  },
+  {
+      pergunta: "Qual dessas atividades te atrai mais?",
+      resposta: [
+        {alternativa: "Aventuras e esportes que te desafiem", correct: true, casa:'grif' }, 
+        // grifinoria
+        {alternativa: "Atividades em grupo onde todos participam", correct: true, casa:'lufa' },
+        // lufalufa,
+        {alternativa: "Estudo e desafios mentais como enigmas ou quebra-cabeças", correct: true, casa:'corv' },
+        // corvinal,
+        {alternativa: "Estratégia e planejamento em jogos ou projetos", correct: true, casa:'son' },
+        // sonserina
+      ]
+  },
+  {
+      pergunta: "Qual frase mais te representa?",
+      resposta: [
+        {alternativa: "'Faça o que é certo, mesmo que seja difícil.'", correct: true, casa:'grif' }, 
+        // grifinoria
+        {alternativa: "'A união faz a força.'", correct: true, casa:'lufa' },
+        // lufalufa,
+        {alternativa: "'Sempre busque saber mais.'", correct: true, casa:'corv' },
+        // corvinal,
+        {alternativa: "'O sucesso exige sacrifícios.'", correct: true, casa:'son' }
+        // sonserina
+      ]
+   },
+  {
+      pergunta: "O que você faria se encontrasse um objeto mágico de grande poder?",
+      resposta: [
+        {alternativa: "Usaria para ajudar quem precisa", correct: true, casa:'grif' }, 
+        // grifinoria
+        {alternativa: "Guardaria com segurança, evitando que caia em mãos erradas", correct: true, casa:'son' },
+        // sonserina
+        {alternativa: "Estudaria tudo sobre ele antes de usá-lo", correct: true, casa:'corv' },
+        // corvinal,
+        {alternativa: "Usaria com cautela para objetivos importantes", correct: true, casa:'lufa' }
+        // lufalufa
+      ]
+  },
+  {
+      pergunta: "Como você se sente em relação ao trabalho em equipe?",
+      resposta: [
+        {alternativa: "Gosta, especialmente em desafios onde pode mostrar sua coragem", correct: true, casa:'grif' }, 
+        // grifinoria
+        {alternativa: "Prefere porque valoriza a contribuição de todos", correct: true, casa:'lufa' },
+        // lufalufa,
+        {alternativa: "Pode fazer parte, mas gosta de liderar ou ter autonomia", correct: true, casa:'son' },
+        // sonserina
+        {alternativa: "Gosta, mas trabalha melhor quando lidera ou orienta os outros", correct: true, casa:'corv' }
+        // corvinal
+      ]
+  },
+  {
+      pergunta: "Qual reação descreve melhor como você lida com fracassos?",
+      resposta: [
+        {alternativa: "Tenta novamente até conseguir, sem desanimar", correct: true, casa:'grif' }, 
+        // grifinoria
+        {alternativa: "Aprende com o erro e compartilha o aprendizado com outros", correct: true, casa:'lufa' },
+        // lufalufa,
+        {alternativa: "Analisa o que deu errado e faz um plano para corrigir", correct: true, casa:'corv' },
+        // corvinal,
+        {alternativa: "Usa o fracasso como combustível para alcançar novos objetivos", correct: true, casa:'son' }
+        // sonserina
+      ]
   }
+  ];
+  
+  let numeroDaQuestaoAtual = 0;
+  let numero_enunciado = 1;
+  let pontos = 0;
+  let lufalufa = 0;
+  let corvinal = 0;
+  let sonserina = 0;
+  let grifinoria = 0;
+  
+// decidindo para qual casa o usuario vai
+var casa_escolhida = ``;
+
+
+  let quantidadeDeQuestoes = listaDeQuestoes.length;
+  
+  const question_container = document.querySelector(".quizz-card");
+  const alternativas_container = document.querySelector(".quizz-alternativas");
+  let question_text = document.querySelector(".question");
+  
+  function proxima_pergunta(){
+    if (numeroDaQuestaoAtual == 9){
+      finalizei.innerText = `ACABOU !`;
+      question_text.innerHTML = `Foi designado que você fosse para a casa <br> <br> ${casa_escolhida} <br> <br> Pontuação: ${pontos}`;
+      alternativas_container.innerHTML = `<div class="alternativas-background"><span><a style="text-decoration: none">Confira o ranking</a></span></div>`;
+
+      var id_da_casa = 0;
+      if (casa_escolhida == "Grifinória" ){
+        id_da_casa = 1;
+      } else if (casa_escolhida == "Lufa-Lufa" ){
+        id_da_casa = 2;
+      } else if (casa_escolhida == "Corvinal" ){
+        id_da_casa = 3;
+      } else if ( casa_escolhida == "Sonserina" ){
+        id_da_casa = 4;
+      }
+
+      fetch (`http://localhost:3333/casa/atualizar_casa/${sessionStorage.ID_USUARIO}/${id_da_casa}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }).then(res => res.json()).then((res) =>{
+        console.log(res)
+      })
+      return;
+    } else {
+
+    while(alternativas_container.firstChild){
+      alternativas_container.removeChild(alternativas_container.firstChild)
+    }
+    
+    numeroDaQuestaoAtual++;
+    numero_enunciado ++;
+    pontos += 150;
+    
+    question_text.textContent = listaDeQuestoes[numeroDaQuestaoAtual].pergunta;
+    listaDeQuestoes[numeroDaQuestaoAtual].resposta.forEach(answer =>  {
+      const nova_pergunta = document.createElement("span");
+      nova_pergunta.classList.add("alternativas-background");
+      nova_pergunta.textContent = answer.alternativa;
+      pergunta_atual.innerText = numero_enunciado;
+  
+      if (answer.correct){
+        nova_pergunta.dataset.correct = answer.correct;
+      }
+      alternativas_container.appendChild(nova_pergunta);
+      nova_pergunta.addEventListener("click", select_alternativa)
+
+      })
+    }
+  }
+
+  
+  function select_alternativa(event){
+      const alternativa_selecionada = event.target;
+  
+  }
+  
+  
+  alternativas_container.addEventListener("click", (e) =>{
+    let repostas = listaDeQuestoes[numeroDaQuestaoAtual].resposta
+    for(let i = 0; i < repostas.length; i ++){
+      if(repostas[i].alternativa == e.target.innerText){
+          if(repostas[i].casa == 'grif'){
+            grifinoria++
+          }else if (repostas[i].casa == 'son'){
+            sonserina++;
+          }else if(repostas[i].casa == 'lufa'){
+            lufalufa++;
+          }else {
+            corvinal++;
+          }
+        }
+
+      console.log(lufalufa, corvinal, grifinoria, sonserina)
+    }
+     if (lufalufa > corvinal && lufalufa > sonserina && lufalufa > grifinoria){
+      casa_escolhida = `Lufa-Lufa`;
+    } else if (grifinoria > lufalufa && grifinoria > sonserina && grifinoria > corvinal){
+      casa_escolhida = `Grifinória`;
+    } else if (sonserina > grifinoria && sonserina > lufalufa && sonserina > corvinal){
+      casa_escolhida = `Sonserina`;
+    } else if (corvinal > grifinoria && corvinal > sonserina && corvinal > lufalufa){
+      casa_escolhida = `Corvinal`;
+    } else {
+      var alternado = Math.floor(Math.random() * 4 + 1);
+      if ( alternado == 1 ){
+        casa_escolhida = "Grifinória"
+      } else if ( alternado == 2){
+        casa_escolhida = "Corvinal"
+      } else if ( alternado == 3){
+        casa_escolhida = "Sonserina"
+      } else if ( alternado == 4 ){
+        casa_escolhida = "Lufa-Lufa"
+      }
+    }
+
+    proxima_pergunta()
+    
+  });
+
 </script>
