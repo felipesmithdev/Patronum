@@ -19,7 +19,8 @@ var app = express();
 var usuarioRouter = require("./src/routes/usuarios");
 var casaRouter = require("./src/routes/casa");
 var indexRouter = require("./src/routes/index");
-
+var interacoesRouter = require("./src/routes/interacoes");
+var quizzRouter = require("./src/routes/quizz");
 
 
 app.use(express.json());
@@ -29,6 +30,8 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(cors());
 
 
+app.use("/quizz", quizzRouter);
+app.use("/interacoes", interacoesRouter);
 app.use("/usuarios", usuarioRouter);
 app.use("/casa", casaRouter);
 app.use("/", indexRouter)

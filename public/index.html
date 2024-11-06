@@ -76,35 +76,35 @@
             <div class="livros-filho">
               <div class="livros-filho-estrela">
                 <a href="https://www.harrypotter.com/discover/books/harry-potter-and-the-philosophers-stone"><img src="./img/livros/Rectangle 13.png" alt="" /></a>
-                <i id="livro1" onclick="favoritar1()" class="fa-regular fa-star"></i>
+                <i id="livro1" onclick="favoritar1()" class="fa-regular fa-star curtiu curtido"></i>
               </div>
               <div class="livros-filho-estrela">
                 <a href="https://www.harrypotter.com/discover/books/harry-potter-and-the-chamber-of-secrets"><img src="./img/livros/Rectangle 14.png" alt="" /></a>
-                <i id="livro2" onclick="favoritar2()" class="fa-regular fa-star"></i>
+                <i id="livro2" onclick="favoritar2()" class="fa-regular fa-star curtiu curtido"></i>
               </div>
               <div class="livros-filho-estrela">
                 <a href="https://www.harrypotter.com/discover/books/harry-potter-and-the-prisoner-of-azkaban"><img src="./img/livros/Rectangle 15.png" alt="" /></a>
-                <i id="livro3" onclick="favoritar3()" class="fa-regular fa-star"></i>
+                <i id="livro3" onclick="favoritar3()" class="fa-regular fa-star curtiu curtido"></i>
               </div>
               <div class="livros-filho-estrela">
                 <a href="https://www.harrypotter.com/discover/books/harry-potter-and-the-goblet-of-fire"><img src="./img/livros/Rectangle 20.png" alt="" /></a>
-                <i id="livro4" onclick="favoritar4()" class="fa-regular fa-star"></i>
+                <i id="livro4" onclick="favoritar4()" class="fa-regular fa-star curtiu curtido"></i>
               </div>
               <div class="livros-filho-estrela">
                 <a href="https://www.harrypotter.com/discover/books/harry-potter-and-the-order-of-the-phoenix"><img src="./img/livros/Rectangle 16.png" alt="" /></a>
-                <i id="livro5" onclick="favoritar5()" class="fa-regular fa-star"></i>
+                <i id="livro5" onclick="favoritar5()" class="fa-regular fa-star curtiu curtido"></i>
               </div>
               <div class="livros-filho-estrela">
                 <a href="https://www.harrypotter.com/discover/books/harry-potter-and-the-half-blood-prince"><img src="./img/livros/Rectangle 17.png" alt="" /></a>
-                <i id="livro6" onclick="favoritar6()" class="fa-regular fa-star"></i>
+                <i id="livro6" onclick="favoritar6()" class="fa-regular fa-star curtiu curtido"></i>
               </div>
               <div class="livros-filho-estrela">
                 <a href="https://www.harrypotter.com/discover/books/harry-potter-and-the-deathly-hallows"><img src="./img/livros/Rectangle 19.png" alt="" /></a>
-                <i id="livro7" onclick="favoritar7()" class="fa-regular fa-star"></i>
+                <i id="livro7" onclick="favoritar7()" class="fa-regular fa-star curtiu curtido"></i>
               </div>
               <div class="livros-filho-estrela">
                 <a href="https://www.harrypotter.com/discover/books/harry-potter-and-the-cursed-child-parts-one-and-two-screenplay"><img src="./img/livros/Rectangle 18.png" alt="" /></a>
-                <i id="livro8" onclick="favoritar8()" class="fa-regular fa-star"></i>
+                <i id="livro8" onclick="favoritar8()" class="fa-regular fa-star curtiu curtido"></i>
               </div>
             </div>
           </div>
@@ -411,15 +411,38 @@
 if (sessionStorage.NOME_USUARIO != undefined){
     document.querySelector(".nav-login").innerHTML = `<p style="color:#fff; font-size:20px; font-family: 'Montserrat';">Olá ! <br> ${sessionStorage.NOME_USUARIO} </p>`
   }
+    // validar se existe interação com a parte de curtir os livros
+      fetch (`http://localhost:3333/interacoes/checar/${sessionStorage.ID_USUARIO}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }).then(res => res.json()).then((res) =>{
+        console.log(res);
+      })
   
   function ir_para_cadastro(){
     window.location.href="./cadastro.html"
   }
+  var livro = 0;
 
   function favoritar1(){
     if (sessionStorage.NOME_USUARIO != undefined){
       var mudar = document.getElementById("livro1");
       mudar.className = "fa-solid fa-star";
+      
+      livro = 1;
+
+      fetch (`http://localhost:3333/interacoes/interagir/${sessionStorage.ID_USUARIO}/${livro}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }).then(res => res.json()).then((res) =>{
+        console.log(res)
+      })
+      return;
+
     } else {
        window.location = "./login.html";
     }
@@ -428,6 +451,17 @@ if (sessionStorage.NOME_USUARIO != undefined){
     if (sessionStorage.NOME_USUARIO != undefined){
       var mudar = document.getElementById("livro2");
       mudar.className = "fa-solid fa-star";
+            livro = 2;
+
+      fetch (`http://localhost:3333/interacoes/interagir/${sessionStorage.ID_USUARIO}/${livro}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }).then(res => res.json()).then((res) =>{
+        console.log(res)
+      })
+      return;
     } else {
        window.location = "./login.html";
     }
@@ -436,6 +470,17 @@ if (sessionStorage.NOME_USUARIO != undefined){
     if (sessionStorage.NOME_USUARIO != undefined){
       var mudar = document.getElementById("livro3");
       mudar.className = "fa-solid fa-star";
+            livro = 3;
+
+      fetch (`http://localhost:3333/interacoes/interagir/${sessionStorage.ID_USUARIO}/${livro}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }).then(res => res.json()).then((res) =>{
+        console.log(res)
+      })
+      return;
     } else {
        window.location = "./login.html";
     }
@@ -444,6 +489,17 @@ if (sessionStorage.NOME_USUARIO != undefined){
     if (sessionStorage.NOME_USUARIO != undefined){
       var mudar = document.getElementById("livro4");
       mudar.className = "fa-solid fa-star";
+            livro = 4;
+
+      fetch (`http://localhost:3333/interacoes/interagir/${sessionStorage.ID_USUARIO}/${livro}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }).then(res => res.json()).then((res) =>{
+        console.log(res)
+      })
+      return;
     } else {
        window.location = "./login.html";
     }
@@ -452,6 +508,17 @@ if (sessionStorage.NOME_USUARIO != undefined){
     if (sessionStorage.NOME_USUARIO != undefined){
       var mudar = document.getElementById("livro5");
       mudar.className = "fa-solid fa-star";
+            livro = 5;
+
+      fetch (`http://localhost:3333/interacoes/interagir/${sessionStorage.ID_USUARIO}/${livro}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }).then(res => res.json()).then((res) =>{
+        console.log(res)
+      })
+      return;
     } else {
        window.location = "./login.html";
     }
@@ -460,6 +527,17 @@ if (sessionStorage.NOME_USUARIO != undefined){
     if (sessionStorage.NOME_USUARIO != undefined){
       var mudar = document.getElementById("livro6");
       mudar.className = "fa-solid fa-star";
+            livro = 6;
+
+      fetch (`http://localhost:3333/interacoes/interagir/${sessionStorage.ID_USUARIO}/${livro}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }).then(res => res.json()).then((res) =>{
+        console.log(res)
+      })
+      return;
     } else {
        window.location = "./login.html";
     }
@@ -468,6 +546,17 @@ if (sessionStorage.NOME_USUARIO != undefined){
     if (sessionStorage.NOME_USUARIO != undefined){
       var mudar = document.getElementById("livro7");
       mudar.className = "fa-solid fa-star";
+            livro = 7;
+
+      fetch (`http://localhost:3333/interacoes/interagir/${sessionStorage.ID_USUARIO}/${livro}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }).then(res => res.json()).then((res) =>{
+        console.log(res)
+      })
+      return;
     } else {
        window.location = "./login.html";
     }
@@ -477,6 +566,17 @@ if (sessionStorage.NOME_USUARIO != undefined){
     if (sessionStorage.NOME_USUARIO != undefined){
       var mudar = document.getElementById("livro8");
       mudar.className = "fa-solid fa-star";
+            livro = 8;
+
+      fetch (`http://localhost:3333/interacoes/interagir/${sessionStorage.ID_USUARIO}/${livro}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }).then(res => res.json()).then((res) =>{
+        console.log(res)
+      })
+      return;
     } else {
        window.location = "./login.html";
     }

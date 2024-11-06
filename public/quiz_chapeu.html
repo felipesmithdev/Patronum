@@ -276,9 +276,20 @@ var casa_escolhida = ``;
       } else if ( casa_escolhida == "Sonserina" ){
         id_da_casa = 4;
       }
-
+      var nome_quizz = "Chapéu Seletor";
+      // aqui irá fazer o update para que a fk_casa no banco de dados esteja linkada com a casa da pessoa
       fetch (`http://localhost:3333/casa/atualizar_casa/${sessionStorage.ID_USUARIO}/${id_da_casa}`, {
         method: "PUT",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }).then(res => res.json()).then((res) =>{ // estou pegando a resposta e transformando ela em json, com isso uso o console.log para me mostrar a res (o objeto)
+        console.log(res)
+      })
+
+      // aqui irei adicionar o registro da participação do quizz do usuário na tabela quizz
+      fetch (`http://localhost:3333/quizz/inserir_quizz/${sessionStorage.ID_USUARIO}/${pontos}/${nome_quizz}`, {
+        method: "POST",
         headers: {
           "Content-Type": "application/json"
         }

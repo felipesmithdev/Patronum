@@ -20,10 +20,13 @@ CREATE TABLE pessoa (
 CREATE TABLE interacoes (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	numero int,
-	dt_hora datetime,
+	dt_hora datetime default now(),
 	fk_pessoa INT,
 	FOREIGN KEY (fk_pessoa) REFERENCES pessoa(id_pessoa)
 );
+
+select * from interacoes;
+
 
 create table quizzes (
 	id_quizz INT PRIMARY KEY AUTO_INCREMENT,
@@ -40,3 +43,5 @@ VALUES
     ('Lufa-Lufa', 'Helga Hufflepuff'),
     ('Corvinal', 'Rowena Ravenclaw'),
     ('Sonserina', 'Salazar Slytherin');
+    
+select * from pessoa;
