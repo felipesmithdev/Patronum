@@ -20,6 +20,7 @@ var usuarioRouter = require("./src/routes/usuarios");
 var casaRouter = require("./src/routes/casa");
 var indexRouter = require("./src/routes/index");
 var interacoesRouter = require("./src/routes/interacoes");
+var rankingRouter = require("./src/routes/ranking")
 var quizzRouter = require("./src/routes/quizz");
 
 
@@ -29,7 +30,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(cors());
 
-
+app.use("/ranking", rankingRouter);
 app.use("/quizz", quizzRouter);
 app.use("/interacoes", interacoesRouter);
 app.use("/usuarios", usuarioRouter);
@@ -39,13 +40,6 @@ app.use("/", indexRouter)
 
 app.listen(PORTA_APP, function () {
     console.log(`
-    ##   ##  ######   #####             ####       ##     ######     ##              ##  ##    ####    ######  
-    ##   ##  ##       ##  ##            ## ##     ####      ##      ####             ##  ##     ##         ##  
-    ##   ##  ##       ##  ##            ##  ##   ##  ##     ##     ##  ##            ##  ##     ##        ##   
-    ## # ##  ####     #####    ######   ##  ##   ######     ##     ######   ######   ##  ##     ##       ##    
-    #######  ##       ##  ##            ##  ##   ##  ##     ##     ##  ##            ##  ##     ##      ##     
-    ### ###  ##       ##  ##            ## ##    ##  ##     ##     ##  ##             ####      ##     ##      
-    ##   ##  ######   #####             ####     ##  ##     ##     ##  ##              ##      ####    ######  
     \n\n\n                                                                                                 
     Servidor do seu site já está rodando! Acesse o caminho a seguir para visualizar .: http://${HOST_APP}:${PORTA_APP} :. \n\n
     Você está rodando sua aplicação em ambiente de .:${process.env.AMBIENTE_PROCESSO}:. \n\n

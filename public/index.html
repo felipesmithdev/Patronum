@@ -26,8 +26,7 @@
           <ul class="list-nav">
             <li><a href="#">Home</a></li>
             <li><a href="#_sobre-nos">Sobre</a></li>
-            <li><a href="#_slider">Filmes</a></li>
-            <li><a href="#_feedback">Contato</a></li>
+            <li><a href="#_slider">Filmes</a></li>  
             <li><a href="#_livros">Livros</a></li>
           </ul>
           <div class="nav-login"><a href="./login.html"><button onclick="">Entrar</button></a></div>
@@ -322,28 +321,7 @@
         </div>
       </div>
       </section>
-      <section id="_feedback" class="container-feedback">
-      <div class="pai-feedback">
-        <h2>Fale Conosco</h2>
-      </div>        
-      <div class="irmao-feedback">
-        <div class="feedback-input">
-          <span>Nome Completo</span> <br>
-          <input type="text"> <br>
-          <span>Email</span> <br>
-          <input type="text"> <br>
-          <span>Assunto</span> <br>
-          <input type="text">
-        </div>
-        <div class="feedback-mensagem">
-          <span>Mensagem</span> <br>
-          <textarea name="" id=""></textarea> <br>
-          <input class="feedback-check" type="checkbox"><label for="">Concordo em receber emais de promoções especiais</label>
-          <div class="feedback-enviar"><button>Enviar</button></div>
-        </div>
-      </div>
-      <div class="fundo-feedback"></div>
-      </section>
+
 
       <section id="_quizzes" class="quiz-container">
         <div class="titulo-quiz"> <h2>QUIZZES</h2></div>
@@ -373,7 +351,7 @@
                 <span><a href="#_livros">Livros</a></span>
               </div>
               <div class="rodape-coluna">
-                <span><a href="#_feedback">Fale conosco</a></span>
+                <span><a href="./ranking.html">Dashboard</a></span>
                 <span><a href="#_quizzes">Quizzes</a></span>
               </div>
             </div>
@@ -409,9 +387,11 @@
 <script>
 
 if (sessionStorage.NOME_USUARIO != undefined){
-    document.querySelector(".nav-login").innerHTML = `<p style="color:#fff; font-size:20px; font-family: 'Montserrat';">Olá ! <br> ${sessionStorage.NOME_USUARIO} </p>`
+    document.querySelector(".nav-login").innerHTML = `<p style="color:#fff; font-size:20px; font-family: 'Montserrat'; width:200px "> ${sessionStorage.NOME_USUARIO} <br> <a style="font-size:18px; display: flex; margin-left: 0%; margin-top: 3%" href="./login.html"> Sair <i style="margin-left: 5%; margin-top: 1%" class="fa-solid fa-right-from-bracket"></i> </a></p>`
   }
     // validar se existe interação com a parte de curtir os livros
+    var curtiu = document.querySelectorAll(".curtiu");
+
       fetch (`http://localhost:3333/interacoes/checar/${sessionStorage.ID_USUARIO}`, {
         method: "GET",
         headers: {
@@ -419,6 +399,50 @@ if (sessionStorage.NOME_USUARIO != undefined){
         }
       }).then(res => res.json()).then((res) =>{
         console.log(res);
+        for (var i = 0; i < res.length; i++){
+          var numero_livro = res[i].numero;
+          console.log(numero_livro)
+          if (numero_livro == 1) {
+            var mudando_icone = document.getElementById("livro1");
+            mudando_icone.className = "fa-solid fa-star";
+            mudando_icone.onclick = "";
+          }
+          if (numero_livro == 2) {
+            var mudando_icone = document.getElementById("livro2");
+            mudando_icone.className = "fa-solid fa-star";
+            mudando_icone.onclick = "";
+          }
+          if (numero_livro == 3) {
+            var mudando_icone = document.getElementById("livro3");
+            mudando_icone.className = "fa-solid fa-star";
+            mudando_icone.onclick = "";
+          }
+          if (numero_livro == 4) {
+            var mudando_icone = document.getElementById("livro4");
+            mudando_icone.className = "fa-solid fa-star";
+            mudando_icone.onclick = "";
+          }
+          if (numero_livro == 5) {
+            var mudando_icone = document.getElementById("livro5");
+            mudando_icone.className = "fa-solid fa-star";
+            mudando_icone.onclick = "";
+          }
+          if (numero_livro == 6) {
+            var mudando_icone = document.getElementById("livro6");
+            mudando_icone.className = "fa-solid fa-star";
+            mudando_icone.onclick = "";
+          }
+          if (numero_livro == 7) {
+            var mudando_icone = document.getElementById("livro7");
+            mudando_icone.className = "fa-solid fa-star";
+            mudando_icone.onclick = "";
+          }
+          if (numero_livro == 8) {
+            var mudando_icone = document.getElementById("livro8");
+            mudando_icone.className = "fa-solid fa-star";
+            mudando_icone.onclick = "";
+          }
+        }
       })
   
   function ir_para_cadastro(){

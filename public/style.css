@@ -459,7 +459,7 @@ body span {
 
 /* sobre nos */
 .div-main-content {
-    height: 457vh;
+    height: 365vh;
     width: 99vw;
     background-image: url('./img/png_estrelas.png'), linear-gradient(180deg, #0e0812, #120c19 121.35%);
     margin-top: -3%;
@@ -580,11 +580,10 @@ body span {
     cursor: pointer;
 }
 
-/* fale conosco */
+ /* fale conosco  */
 .container-feedback {
     width: 100%;
     height: 91vh;
-    /* border: solid white; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -596,7 +595,6 @@ body span {
     height: 20%;
     display: flex;
     align-items: center;
-    /* justify-content: center; */
 
     & h2 {
         font-size: 60px;
@@ -605,8 +603,6 @@ body span {
 
 .irmao-feedback {
     width: 80%;
-    height: 60%;
-    /* border: solid white; */
     display: flex;
 }
 
@@ -665,7 +661,6 @@ body span {
 .feedback-input{
     width: 50%;
     height: 100%;
-    /* border: solid #fff; */
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -692,7 +687,7 @@ body span {
     height: 20%;
     background-image: url('./img/fundo_trem_feedback.png');
     background-size: cover;
-}
+} 
 
 
 /* quiz container  */
@@ -713,9 +708,9 @@ body span {
 }
 
 .titulo-quiz {
+    margin-top: 2%;
     width: 100%;
     height: 15%;
-    /* margin-top: 1%; */
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -738,6 +733,7 @@ body span {
 
     & .escudos {
         cursor: pointer;
+        margin-top: 5%;
         width: 100%;
         height: 90%;
         display: flex;

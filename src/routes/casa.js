@@ -9,5 +9,4 @@ router.put("/atualizar_casa/:id_pessoa/:fk_casa",  function (req, res){
   casaController.atualizar_casa(req,res);
 })
 
-
 module.exports = router;

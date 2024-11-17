@@ -1,0 +1,206 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(228, 228, 228);
+}
+
+.navbar{
+    width: 100%;
+    height: 10%;
+    background-color: #010a1a;
+    display: flex;
+    justify-content: center;
+}
+
+.content_navbar{
+    height: 100%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content_navbar h2 {
+    color: #fff;
+    font-family: "Amatic SC", sans-serif;
+    font-size: 40px;
+}
+
+.content_navbar h3 {
+    color: #fff;
+    font-family: 'Montserrat';
+}
+
+.content_navbar a {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: 'Montserrat';
+    font-size: 20px;
+    font-weight: 400;
+}
+.content_navbar a:hover{
+    color: rgb(168, 168, 168);
+}
+.content_navbar a i {
+    font-weight: 600;
+}
+/* graphics */
+
+.container_graphics {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+    gap: 60px;
+    /* border: solid red; */
+    padding: 0%;
+}
+
+.div_vo {
+    height: 30%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    & h2 {
+        font-family: 'Montserrat';
+        font-size: 30px;
+    }
+}
+
+.div_irmao {
+    height: 100%;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.div_pai {
+    margin-top: 3%;
+    padding: 25px;
+    height: 100%;
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+    /* border: solid black; */
+}
+
+.content_kpi1 {
+    height: 80%;
+    width: 20%;
+    background-color: #e7e7e7;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0px 6px 10px 10px rgba(53, 53, 53, 0.3);
+}
+.content_kpi1 h2 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.content_kpi1 h1 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 90px;
+    font-weight: 500;
+}
+.content_kpi2 {
+    height: 80%;
+    width: 40%;
+    background-color: #e7e7e7;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  box-shadow: 0px 6px 10px 10px rgba(53, 53, 53, 0.3);
+  align-items: center;
+    overflow: hidden;
+}
+.content_kpi2 h2 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+}
+
+.content_kpi2 h1 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 400%;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.content_kpi3 {
+    height: 80%;
+    width: 20%;
+    background-color: #e7e7e7;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+  box-shadow: 0px 6px 10px 10px rgba(53, 53, 53, 0.3);
+
+}
+.content_kpi3 h2 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+}
+
+.content_kpi3 h1 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 90px;
+    font-weight: 500;
+}
+
+.graphic {
+    height: 70%;
+    width: 95%;
+    display: flex;
+    align-self: center;
+    gap: 4%;
+    /* border: solid green; */
+}
+
+.graphic1 {
+    height: 90%;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    /* border: solid 1px #000; */
+    border-radius: 15px;
+  box-shadow: 0px 6px 10px 10px rgba(53, 53, 53, 0.3);
+    
+}
+.graphic2 {
+    height: 90%;
+    width: 40%;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    /* border: solid 1px #000; */
+    border-radius: 15px;
+  box-shadow: 0px 6px 10px 10px rgba(53, 53, 53, 0.3);
+    
+}

@@ -27,7 +27,6 @@
               <li><a href="./index.html#_banner">Home</a></li>
               <li><a href="./index.html#_sobre-nos">Sobre</a></li>
               <li><a href="./index.html#_slider">Filmes</a></li>
-              <li><a href="./index.html#_feedback">Contato</a></li>
               <li><a href="./index.html#_livros">Livros</a></li>
             </ul>
             <div class="nav-login"><a href="./login.html"><button onclick="">Entrar</button></a></div>
@@ -64,7 +63,7 @@
                   <span><a href="../public/index.html#_livros">Livros</a></span>
                 </div>
                 <div class="rodape-coluna">
-                  <span><a href="../public/index.html#_feedback">Fale conosco</a></span>
+                  <span><a href="./ranking.html">Dashboard</a></span>
                   <span><a href="../public/index.html#_quizzes">Quizzes</a></span>
                 </div>
               </div>
@@ -98,12 +97,9 @@
 </body>
 </html>
 <script>
-  if (sessionStorage.NOME_USUARIO != undefined){
-      document.querySelector(".nav-login").innerHTML = `<p style="color:#fff; font-size:20px; font-family: 'Montserrat';">Olá ! <br> ${sessionStorage.NOME_USUARIO} </p>`
-      // proxima_pergunta();
-    } else {
-      // window.location = "./login.html";
-    }
+if (sessionStorage.NOME_USUARIO != undefined){
+    document.querySelector(".nav-login").innerHTML = `<p style="color:#fff; font-size:20px; font-family: 'Montserrat'; width:200px "> ${sessionStorage.NOME_USUARIO} <br> <a style="font-size:18px; display: flex; margin-left: 0%; margin-top: 3%" href="./login.html"> Sair <i style="margin-left: 5%; margin-top: 1%" class="fa-solid fa-right-from-bracket"></i> </a></p>`
+  }
   
   
     const listaDeQuestoes = [
@@ -264,7 +260,7 @@ var casa_escolhida = ``;
     if (numeroDaQuestaoAtual == 9){
       finalizei.innerText = `ACABOU !`;
       question_text.innerHTML = `Foi designado que você fosse para a casa <br> <br> ${casa_escolhida} <br> <br> Pontuação: ${pontos}`;
-      alternativas_container.innerHTML = `<div class="alternativas-background"><span><a style="text-decoration: none">Confira o ranking</a></span></div>`;
+      alternativas_container.innerHTML = `<div class="alternativas-background"><span style=" width: 100%;"><a href="ranking.html" style="text-decoration: none;">Confira o ranking</a></span></div>`;
 
       var id_da_casa = 0;
       if (casa_escolhida == "Grifinória" ){

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranking</title>
+    <link rel="icon" href="./img/favicon.png"/>
+    <link rel="stylesheet" href="ranking.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Germania+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/d5ea0dfb99.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Germania+One&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <section class="navbar">
+    <div class="content_navbar">
+      <h2 class="logo-h2">PATRONUM</h2>
+      <h3 class="titulo grafico">CONTROLE DE ACESSO</h3>
+      <a href="./index.html">Sair <i class="fa-solid fa-right-from-bracket"></i></a>
+    </div>
+  </section>
+    <section class="container_graphics">
+        <div class="div_vo">
+          <div class="div_pai">
+              <div class="content_kpi1"><h2>Total de Usuários</h2> <h1 id="usuarios_total">10</h1></div>
+              <div class="content_kpi2"><h2>Casa com maior Número de alunos</h2> <h1 id="nome_da_casa_kpi">Sonserina</h1></div>
+              <div class="content_kpi3"><h2>Idade média dos usuários</h2> <h1 id="idade_media_kpi">10</h1></div>
+          </div>
+          <div class="div_irmao">
+              <h2>MEDIÇÃO DE ALUNOS POR CASA</h2>
+          </div>
+        </div>
+        <div class="graphic">
+            <div class="graphic1">
+                <canvas id="myChart"></canvas>
+            </div>
+            <div class="graphic2">
+              <canvas id="myDoughnutChart"></canvas>
+            </div>
+        </div>
+    </section>
+    
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+
+
+<script>
+
+
+var lista_nome = [];
+var lista_alunos = [];
+var usuarios_cadastrados = 0
+var casa_nome = "";
+var casa_alunos = 0;
+
+
+      // dados kpi 1
+fetch (`http://localhost:3333/ranking/dados_kpi1`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }).then(res => res.json()).then((res) =>{
+        console.log(res);
+        usuarios_cadastrados = res[0].usuarios;
+        usuarios_total.innerText = usuarios_cadastrados;
+        
+      })
+
+      // buscando os dados da kpi 2
+      var quantidade1 = 0;
+fetch (`http://localhost:3333/ranking/dados_kpi2`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }).then(res => res.json()).then((res) =>{
+        for (var i = 0; i < res.length; i++){
+          console.log(res);
+          var alunos_da_casa = res[i].alunos;
+          var nome_da_casa = res[i].casa;
+          if (alunos_da_casa > quantidade1){
+            quantidade1 = alunos_da_casa
+            casa_alunos = quantidade1;
+            casa_nome = nome_da_casa;
+          }
+        }
+        nome_da_casa_kpi.innerText = casa_nome;
+
+      })
+
+      //dados kpi 3
+      fetch (`http://localhost:3333/ranking/dados_kpi3`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }).then(res => res.json()).then((res) =>{
+        console.log(res);
+        var idade = res[0].idade;
+        idade_media_kpi.innerText = idade;
+        
+      })
+
+      // dados do grafico de rosca
+fetch (`http://localhost:3333/ranking/trazer_dados`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }).then(res => res.json()).then((res) =>{
+        // console.log(res)
+        for (var i = 0; i < res.length; i++){
+            var nome_casa = res[i].casa;
+            var alunos = res[i].alunos;
+            lista_nome.push(nome_casa);
+            lista_alunos.push(alunos);
+            console.log(nome_casa, alunos)
+        }
+        criar_grafico();
+      })
+
+      // dados do grafico de barra
+
+      var lista_livros = [];
+      var lista_curtidas_livros = [];
+
+fetch (`http://localhost:3333/ranking/trazer_dados2`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }).then(res => res.json()).then((res) =>{
+        // console.log(res)
+        for (var i = 0; i < res.length; i++){
+            var nome_livro = res[i].nome;
+            var quantidade = res[i].quantidade;
+            lista_livros.push(nome_livro);
+            lista_curtidas_livros.push(quantidade);
+            console.log(lista_curtidas_livros, lista_livros)
+        }
+        criar_grafico2();
+      })
+      
+  function criar_grafico2() {
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: lista_livros,
+      datasets: [{
+        label: 'LIVROS CURTIDOS',
+        data: lista_curtidas_livros,
+        borderWidth: 1,
+        // borderColor: 'rgb(255, 233, 0)',
+        backgroundColor: [
+          '#021331',
+          '#021331',
+          '#021331',
+          '#021331',
+          '#021331',
+          '#021331',
+          '#021331',
+          '#021331'
+      ]
+      } 
+    ]
+    },
+    options: {
+        scales: {
+            x: {
+                grid: {
+                    display: false
+                },
+                ticks: {
+                    color: 'black'
+                }
+            },
+            y: {
+                beginAtZero: true,
+                grid: {
+                    display: false 
+                },
+                ticks: {
+                    color: 'black'
+                }
+            }
+        },
+        plugins: {
+            legend: {
+                labels: {
+                    color: 'black' 
+                }
+            }
+        }
+    }
+});
+}
+
+  function criar_grafico(){
+    const ctx = document.getElementById('myDoughnutChart');
+
+    new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: lista_nome,
+      datasets: [{
+        label: 'ALUNOS',
+        data: lista_alunos,
+        borderWidth: 1,
+        // borderColor: 'rgb(255, 233, 0)',
+        backgroundColor: [
+          '#080683',
+          '#080683',
+          '#080683',
+          '#080683'
+      ]
+      } 
+    ]
+    },
+    options: {
+        scales: {
+            x: {
+                grid: {
+                    display: false
+                },
+                ticks: {
+                    color: 'black'
+                }
+            },
+            y: {
+                beginAtZero: true,
+                grid: {
+                    display: false 
+                },
+                ticks: {
+                    color: 'black'
+                }
+            }
+        },
+        plugins: {
+            legend: {
+                labels: {
+                    color: 'black' 
+                }
+            }
+        }
+    }
+});
+  }
+
+  
+  
+ 
+  
+</script>
